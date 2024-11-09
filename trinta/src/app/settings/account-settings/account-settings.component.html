@@ -1,0 +1,59 @@
+@if(currentUser){
+
+    <mat-card class="trinta-card account-settings-card mb-25 bg-white border-none d-block">
+        <mat-card-header>
+          <mat-card-title class="d-flex justify-content-between align-items-center">
+            <h5 class="mt-0 mb-0">Information</h5>
+            <button mat-icon-button (click)="toggleEditMode()">
+              <i-feather name="edit"></i-feather>
+            </button>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form>
+            <div class="row">
+              <!-- First Name -->
+              <div class="col-lg-6">
+                <label class="label d-block fw-medium mb-10">First Name</label>
+                <mat-form-field>
+                  <i-feather name="user"></i-feather>
+                  <mat-label>Enter name</mat-label>
+                  <input matInput [(ngModel)]="currentUser.firstname" name="firstname" [disabled]="!isEditing" required>
+                </mat-form-field>
+              </div>
+      
+              <!-- Last Name -->
+              <div class="col-lg-6">
+                <label class="label d-block fw-medium mb-10">Last Name</label>
+                <mat-form-field>
+                  <i-feather name="user"></i-feather>
+                  <mat-label>Enter name</mat-label>
+                  <input matInput [(ngModel)]="currentUser.lastname" name="lastname" [disabled]="!isEditing" required>
+                </mat-form-field>
+              </div>
+      
+              <!-- Email Address -->
+              <div class="col-lg-6">
+                <label class="label d-block fw-medium mb-10">Email Address</label>
+                <mat-form-field>
+                  <i-feather name="mail"></i-feather>
+                  <mat-label>Enter email address</mat-label>
+                  <input matInput [(ngModel)]="currentUser.email" name="email" [disabled]="!isEditing" required>
+                </mat-form-field>
+              </div>
+            </div>
+      
+            <!-- Display buttons only in edit mode -->
+             @if(isEditing){
+    
+             
+            <div  class="save-profile-btn">
+              <button mat-button type="button" (click)="toggleEditMode()">Cancel</button>
+              <button mat-button type="submit" (click)="updateUser()">Update Profile</button>
+            </div>
+        }
+          </form>
+        </mat-card-content>
+      </mat-card>
+      
+}

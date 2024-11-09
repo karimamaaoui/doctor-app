@@ -1,0 +1,27 @@
+<mat-card class="trinta-card all-courses-card mb-25 bg-white border-none d-block">
+  <mat-card-title class="d-flex justify-content-between align-items-center">
+    <h5 class="mt-0 mb-0">Notifications</h5>
+    <a (click)="deleteNotification()" class="link-btn fw-medium text-primary clear-all-link">
+      Clear All
+    </a>
+  </mat-card-title>
+  <mat-card-content>
+    <div class="notifications-container">
+      <div *ngIf="notifications.length === 0" class="no-notifications">
+        No notifications available.
+      </div>
+      <div *ngFor="let notification of notifications" class="notification-card">
+        <div class="notification-header">
+          <img src="assets/user.jpg" alt="{{notification.senderId.lastname}}" class="sender-photo">
+          <div class="notification-details">
+            <span class="sender-name">{{notification.senderId.firstname}} {{notification.senderId.lastname}}</span>
+            <span class="notification-time">{{notification.timestamp | date:'short'}}</span>
+          </div>
+        </div>
+        <div class="notification-message">
+          {{notification.message}}
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

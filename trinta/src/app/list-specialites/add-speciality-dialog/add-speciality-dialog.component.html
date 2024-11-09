@@ -1,0 +1,33 @@
+<mat-dialog-content>
+    <h1>Add Speciality</h1>
+    <p>Please add the details of the specialty below:</p>
+  
+    <form [formGroup]="specialityForm" class="example-form" (ngSubmit)="onSubmit()">
+      <div class="form-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Speciality Type</mat-label>
+          <input matInput formControlName="SpecialtyType" placeholder="Speciality Type">
+          <mat-error *ngIf="specialityForm.get('SpecialtyType').hasError('required')">
+            Speciality Type is required
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Total Practitioners</mat-label>
+          <input matInput type="number" formControlName="TotalPractitioners" placeholder="Total Practitioners">
+          <mat-error *ngIf="specialityForm.get('TotalPractitioners').hasError('required')">
+            Total Practitioners is required
+          </mat-error>
+          <mat-error *ngIf="specialityForm.get('TotalPractitioners').hasError('min')">
+            Total Practitioners must be at least 1
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-dialog-actions align="end">
+          <button mat-button type="button" color="warn" (click)="onCancel()">Cancel</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="specialityForm.invalid">Add</button>
+        </mat-dialog-actions>
+      </div>
+    </form>
+  </mat-dialog-content>
+  

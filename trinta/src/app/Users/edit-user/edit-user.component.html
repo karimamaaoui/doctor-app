@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>Edit Details</h2>
+<mat-dialog-content class="bg-green">
+      <!-- Edit form content -->
+      <form #editUserForm="ngForm" >
+        <mat-form-field appearance="fill">
+          <mat-label>ID</mat-label>
+          <input matInput name="id" [value]="data.id" disabled />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label><Em></Em>mail</mat-label>
+            <input matInput name="email" [value]="data.email" disabled />
+          </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>FirstName</mat-label>
+          <input
+            matInput
+            [(ngModel)]="data.firstname"
+            name="firstname"
+            class="input-class"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Lastname</mat-label>
+          <input
+            matInput
+            [(ngModel)]="data.lastname"
+            name="lastname"
+            class="input-class"
+          />
+        </mat-form-field>
+        <div class="role-selection">
+            <label class="mat-label">Role</label>
+            <mat-radio-group [(ngModel)]="data.role" name="role">
+              <mat-radio-button value="ADMIN">ADMIN</mat-radio-button>
+              <mat-radio-button value="PATIENT">PATIENT</mat-radio-button>
+              <mat-radio-button value="DOCTOR">DOCTOR</mat-radio-button>
+          
+            </mat-radio-group>
+          </div>
+  
+      </form>
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-button
+      class="select-button"
+      [mat-dialog-close]="true"
+      (click)="editUser(editUserForm)"
+    >
+      Save
+    </button>
+  </mat-dialog-actions>

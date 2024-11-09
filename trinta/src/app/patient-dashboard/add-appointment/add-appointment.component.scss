@@ -1,0 +1,44 @@
+mat-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-radio-button {
+    margin-bottom: 10px; /* Adds margin between radio buttons */
+  }
+  
+  .available-times {
+    margin-top: 20px;
+  }
+  
+  .available-times-title {
+    font-size: 16px; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Margin to separate from the times */
+  }
+  
+  .time-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .time {
+    margin-right: 10px; /* Margin between time and radio button */
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .dialog-actions button {
+    margin-right: 10px;
+  }
+  .selected-button {
+    background-color: blue !important;
+    color: white !important;
+  }
+
+  
+  

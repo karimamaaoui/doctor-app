@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="dashboard">
+      <div class="doctor-section">
+        <div class="section-header">
+          <h2>Patient Information</h2>
+        </div>
+        <div class="section-content d-flex">
+          <div class="col-md-4">
+            <img src="assets/welcome.jpeg" alt="" class="img-small" />
+          </div>
+          <div class="col-md-8">
+            <h6>Name</h6>
+            <p>
+              Manage doctor-related information, appointments, and other details
+              here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br>
+<!-- <div class="row">
+    <div class="col-md-8">
+      <div class="appointment-section">
+        <h4>Upcoming Appointment</h4>
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let appointment of appointments">
+              <td>
+                <div class="doctor-info">
+                  <img src="assets/welcome.jpeg" alt="Doctor Avatar">
+                  <div>
+                    <div class="doctor-name">{{appointment.doctorName}}</div>
+                    <div class="specialty">{{appointment.specialty}}</div>
+                  </div>
+                </div>
+              </td>
+              <td>{{appointment.date}}</td>
+              <td>{{appointment.time}}</td>
+              <td>
+                <div class="treatment">{{appointment.treatment}}</div>
+              </td>
+              <td>{{appointment.contact}}</td>
+              <td>
+                <div class="status">{{appointment.status}}</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="col-md-4">
+      <div class="documents-section">
+        <h4>Reports/Documents</h4>
+        <ul class="documents-list">
+          <li *ngFor="let document of documents">
+            <div class="document-info">
+              <i class="{{document.iconClass}}"></i>
+              <span>{{document.name}}</span>
+            </div>
+            <div class="document-actions">
+              <button class="btn-download"><i class="fa fa-download"></i></button>
+              <button class="btn-delete"><i class="fa fa-trash"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+   -->
+<app-today-appointment/>
+
+<app-patient-appointments/>

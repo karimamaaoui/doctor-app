@@ -1,0 +1,191 @@
+<div
+    class="sidebar-area bg-white transition"
+    [ngClass]="{'active': isToggled}"
+>
+    <div class="logo bg-white">
+        <a routerLink="/" class="d-flex align-items-center">
+            <img src="assets/images/logo-icon.svg" alt="logo-icon">
+            <span class="fw-extrabold">
+                Trinta
+            </span>
+        </a>
+    </div>
+    <div
+        class="burger-menu transition cursor-pointer"
+        [ngClass]="{'active': isToggled}"
+        (click)="toggle()"
+    >
+        <span class="top-bar transition bg-dark d-block"></span>
+        <span class="middle-bar transition bg-dark d-block"></span>
+        <span class="bottom-bar transition bg-dark d-block"></span>
+    </div>
+    <ng-scrollbar visibility="hover">
+        <div class="sidebar-inner">
+            <div class="sidebar-menu">
+                <mat-accordion>
+                    <span class="sub-title text-body">
+                        MAIN
+                    </span>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <i-feather name="home"></i-feather>
+                                <span class="title">
+                                    Dashboard
+                                </span>
+                                <span class="trinta-badge">
+                                    5
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ul class="sidebar-sub-menu">
+                            <li class="sidemenu-item">
+                                <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    </mat-expansion-panel>
+                    <span class="sub-title text-body">
+                        APPS
+                    </span>
+                    
+                    <a routerLink="/apps/users" class="sidebar-menu-link" routerLinkActive="active" *ngIf="hasRole('ADMIN')" [routerLinkActiveOptions]="{exact: true}">
+                        <i-feather name="users"></i-feather>
+                        <span class="title">
+                            Users
+                        </span>
+                    </a>
+                    <a routerLink="/demand-list" class="sidebar-menu-link" routerLinkActive="active" *ngIf="hasRole('ADMIN')" [routerLinkActiveOptions]="{exact: true}">
+                        <i-feather name="users"></i-feather>
+                        <span class="title">
+                            Demand List
+                        </span>
+                    </a>
+
+
+                    
+                    <a routerLink="/speciality-list" class="sidebar-menu-link" routerLinkActive="active" *ngIf="hasRole('ADMIN')" [routerLinkActiveOptions]="{exact: true}">
+                        <i-feather name="users"></i-feather>
+                        <span class="title">
+                            Add Speciality
+                        </span>
+                    </a>
+
+                    
+                    <a routerLink="/add-demand" class="sidebar-menu-link" *ngIf="hasRole('PATIENT')" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i-feather name="users"></i-feather>
+                        <span class="title">
+                            Add Demand
+                        </span>
+                    </a>
+             
+                    <a routerLink="/evaluation" class="sidebar-menu-link" *ngIf="hasRole('PATIENT')" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i-feather name="users"></i-feather>
+                        <span class="title">
+                            Add Evaluation
+                        </span>
+                    </a>
+
+
+
+                    <span class="sub-title text-body" *ngIf="hasRole('DOCTOR')">
+                        DOCTORS
+                    </span>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = true" *ngIf="hasRole('DOCTOR')">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <i-feather name="users"></i-feather>
+                                <span class="title">
+                                    Doctor
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ul class="sidebar-sub-menu">
+                        
+                            <li class="sidemenu-item">
+                                <a routerLink="/doctor/calender" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    Appointment Calender
+                                </a>
+                            </li>
+
+                            <li class="sidemenu-item">
+                                <a routerLink="/doctor/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    dashboard
+                                </a>
+                            </li>
+                            <li class="sidemenu-item">
+                                <a routerLink="/doctor/appointments" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                     Appointments
+                                </a>
+                            </li>
+                            <li class="sidemenu-item">
+                                <a routerLink="/doctor/availability/calender" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                     Availabilities
+                                </a>
+                            </li>
+                        </ul>
+                    </mat-expansion-panel>
+
+
+             
+                    <span class="sub-title text-body" *ngIf="hasRole('PATIENT')">
+                        PATIENTS
+                    </span>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = true" *ngIf="hasRole('PATIENT')">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <i-feather name="users"></i-feather>
+                                <span class="title">
+                                    Patient
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ul class="sidebar-sub-menu">
+                        
+                            <li class="sidemenu-item">
+                                <a routerLink="/dashboard-patient/appointments" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    Appointments
+                                </a>
+                            </li>
+                        </ul>
+                    </mat-expansion-panel>
+     
+     
+              
+                    
+                           <span class="sub-title text-body">
+                        OTHERS
+                    </span>
+                
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <i-feather name="settings"></i-feather>
+                                <span class="title">
+                                    Settings
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ul class="sidebar-sub-menu">
+                            <li class="sidemenu-item">
+                                <a routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    Account Settings
+                                </a>
+                            </li>
+                            <li class="sidemenu-item">
+                                <a routerLink="/settings/change-password" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    Change Password
+                                </a>
+                            </li>
+                       
+                        </ul>
+                    </mat-expansion-panel>
+                 
+                </mat-accordion>
+            </div>
+        </div>
+    </ng-scrollbar>
+</div>

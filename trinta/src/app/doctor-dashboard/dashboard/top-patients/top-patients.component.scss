@@ -1,0 +1,61 @@
+/* src/app/components/top-patients/top-patients.component.scss */
+.top-patients-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: auto; /* Ajustez selon vos besoins */
+  }
+  
+  .patients-wrapper {
+    max-height: 300px; /* Hauteur maximale pour la zone de défilement */
+    overflow-y: auto; /* Activer le défilement vertical */
+  }
+  
+  .patients-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .patient-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .patient-item:last-child {
+    border-bottom: none;
+  }
+  
+  .patient-info {
+    font-size: 0.9rem;
+  }
+  
+  .patient-email {
+    color: #666;
+  }
+  
+  .patient-visit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .visit-count {
+    font-weight: bold;
+  }
+  
+  .star-rating {
+    color: gold;
+  }
+  
+  .star {
+    font-size: 1.2rem; /* Ajustez la taille des étoiles selon vos préférences */
+  }
+  
+  .no-patients-message {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #888;
+  }
+  

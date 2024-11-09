@@ -1,0 +1,17 @@
+<div [ngClass]="{'blank-page': isLandingPage() && !isLoggedIn, 'dark-theme': toggleService.isDark()}">
+  <!-- Conditional Sidebar and Main Content Display -->
+  <ng-container *ngIf="isLoggedIn; else landingPage">
+    <app-sidebar></app-sidebar>
+    <div class="main-content transition d-flex flex-column" [ngClass]="{'active': isToggled}">
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+      <div class="flex-grow-1"></div>
+      <app-footer></app-footer>
+    </div>
+  </ng-container>
+
+  <!-- Landing Page Content -->
+  <ng-template #landingPage>
+    <router-outlet></router-outlet>
+  </ng-template>
+</div>

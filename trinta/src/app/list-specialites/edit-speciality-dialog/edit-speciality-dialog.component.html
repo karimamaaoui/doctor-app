@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Edit Specialty</h1>
+<div mat-dialog-content>
+  <p>Please edit the details of the specialty below:</p>
+  
+  <mat-form-field appearance="fill" class="example-full-width" style="display: block; margin-bottom: 16px;">
+    <mat-label>Specialty Name</mat-label>
+    <input matInput [(ngModel)]="SpecialtyEdited.SpecialtyType" placeholder="Enter the specialty type">
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill" class="example-full-width" style="display: block; margin-bottom: 16px;">
+    <mat-label>Total Practitioners</mat-label>
+    <input matInput type="number" [(ngModel)]="SpecialtyEdited.TotalPractitioners" placeholder="Enter total practitioners">
+  </mat-form-field>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-button type="button" color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" type="submit" (click)="save()">Save</button>
+</mat-dialog-actions>

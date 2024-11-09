@@ -1,0 +1,13 @@
+<h1 mat-dialog-title class="dialog-header">
+    <i class="ri-error-warning-line"></i>
+    Confirmer
+  </h1>
+  <div mat-dialog-content class="dialog-content">
+    Êtes-vous sûr de vouloir supprimer cet élément ?
+  </div>
+  <div mat-dialog-actions class="dialog-actions">
+    <button mat-button (click)="onCancel()" class="cancel-button">Cancel</button>
+    <button mat-button (click)="onConfirm()" class="ok-button" cdkFocusInitial>OK</button>
+  </div>
+  
+  

@@ -1,0 +1,42 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+
+<h1 mat-dialog-title>Schedule Appointment</h1>
+<div mat-dialog-content>
+  <form [formGroup]="appointmentForm">
+
+    <mat-form-field>
+      <mat-label>Select a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choisir une date" [min]="minDate" [disabled]="!isUpdateMode">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker (dateChange)="onDateChange($event)"></mat-datepicker>
+    </mat-form-field>
+    
+    <mat-radio-group formControlName="mode" aria-label="Select an option">
+      <mat-radio-button value="ONLINE" >Online</mat-radio-button>
+      <mat-radio-button value="IN_PERSON">In Person</mat-radio-button>
+    </mat-radio-group>
+    <!-- Use mat-form-field with mat-select for time selection -->
+    <mat-form-field>
+      <mat-select placeholder="Select Time" formControlName="time">
+        <mat-option *ngFor="let time of availableTimes" [value]="time">
+          {{ time }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- New field for email -->
+    <mat-form-field>
+      <input matInput placeholder="Patient's Email" formControlName="email" type="email">
+      <mat-error *ngIf="appointmentForm.get('email').hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="appointmentForm.get('email').hasError('email')">
+        Enter a valid email address
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="appointmentForm.value" (click)="addAppointment()" [disabled]="!appointmentForm.valid">Save</button>
+</div>

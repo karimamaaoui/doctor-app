@@ -1,0 +1,30 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+
+<mat-card
+    class="trinta-card all-courses-card mb-25 bg-white border-none d-block"
+>
+<mat-card-title>
+    <h5 class="mt-0 mb-0">
+        Appointments calender
+    </h5>
+</mat-card-title>
+<mat-card-content>
+<full-calendar [options]="calendarOptions"></full-calendar>
+</mat-card-content>
+</mat-card>
+
+<mat-card class="palette-card">
+    <mat-card-title>
+      <h5>Color Palette</h5>
+    </mat-card-title>
+    <mat-card-content>
+      <div class="color-container">
+        <div *ngFor="let color of colorPalette" class="color-item">
+          <div class="color-box" [ngStyle]="{'background-color': color.color}"></div>
+          <div class="color-label">{{ color.status }}</div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  

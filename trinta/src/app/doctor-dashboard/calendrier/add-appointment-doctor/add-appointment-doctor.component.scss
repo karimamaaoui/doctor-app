@@ -1,0 +1,59 @@
+// Style for the dialog title
+h1[mat-dialog-title] {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  // Style for the form fields
+  mat-form-field {
+    display: block;
+    margin-bottom: 1.5rem; // Add space between form fields
+    width: 100%; // Make form fields use full width
+  }
+  
+  // Style for the input fields
+  mat-form-field input {
+    height: 3rem; // Increase height
+    font-size: 1rem; // Increase font size for better readability
+  }
+  
+  // Style for the select and radio buttons
+  mat-select,
+  mat-radio-group {
+    width: 100%; // Make select and radio buttons use full width
+  }
+  
+  // Style for mat-radio-button to add spacing
+  mat-radio-button {
+    margin-right: 1rem; // Add space between radio buttons
+    margin-bottom: 2rem;
+  }
+  
+  // Style for the action buttons
+  div[mat-dialog-actions] {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem; // Add space between buttons
+  }
+  
+  // Style for the Save button
+  button[mat-button]:last-child {
+    background-color: #007bff; // Blue color for Save button
+    color: #ffffff; // White text color
+    &:hover {
+      background-color: #0056b3; // Darker blue for hover effect
+    }
+  }
+  
+  // Style for the Cancel button
+  button[mat-button]:first-child {
+    background-color: #f8f9fa; // Light gray color for Cancel button
+    color: #000000; // Black text color
+    &:hover {
+      background-color: #e2e6ea; // Slightly darker gray for hover effect
+    }
+  }
+  .mat-datepicker-content {
+    z-index: 1000; /* Assurez-vous que le calendrier est au-dessus des autres éléments */
+  }
+  

@@ -1,0 +1,38 @@
+<div class="scrollbar-container">
+    <div *ngIf="todayAppointments && todayAppointments.length > 0; else noAppointment" class="doctor-todo-container">
+      <h3>Today's Appointments</h3>
+      <div *ngFor="let appointment of todayAppointments" class="appointment-card bg-white position-relative">
+        <h5 class="fw-medium">
+          <i class="ri-user-heart-line"></i> {{ appointment.patient.firstname }} {{ appointment.patient.lastname }}
+        </h5>
+        <div class="appointment-info">
+          <p class="appointment-time">
+            <i class="ri-time-fill"></i> Time: {{ formatLocalTime(appointment.dateAppointment) }}
+          </p>
+          <p class="appointment-mode">
+            <i [ngClass]="{
+              'ri-video-on-fill': appointment.type === 'ONLINE',
+              'ri-building-4-fill': appointment.type === 'IN_PERSON'
+            }"></i>
+            Mode: {{ appointment.type === 'ONLINE' ? 'Online' : 'In-Person' }}
+          </p>
+        </div>
+        <div class="button-container">
+          <p *ngIf="appointment.type === 'ONLINE'" class="time-remaining">
+            <i class="ri-hourglass-fill"></i>Meeting starts in: {{ timeRemainingMap[appointment._id] }}
+          </p>
+          <button class="btn join-button" (click)="goToSharedRoom(appointment._id)" 
+                  [disabled]="!buttonEnabledMap[appointment._id]" *ngIf="appointment.type === 'ONLINE'">
+                  <i class="ri-logout-box-r-line"></i> Join
+          </button>
+         
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #noAppointment>
+      <div class="no-appointment-message bg-white col-12 position-relative">
+        <h5 class="fw-medium"><i class="ri-calendar-schedule-fill"></i> No appointments today.</h5>
+      </div>
+    </ng-template>
+    </div>

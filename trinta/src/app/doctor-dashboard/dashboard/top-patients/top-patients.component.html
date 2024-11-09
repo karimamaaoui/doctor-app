@@ -1,0 +1,25 @@
+<!-- src/app/components/top-patients/top-patients.component.html -->
+<div *ngIf="topPatients.length > 0; else noPatients" class="top-patients-container">
+    <h3 class="title">Top 10 Patients</h3>
+    <div class="patients-wrapper">
+      <ul class="patients-list">
+        <li *ngFor="let patient of topPatients" class="patient-item">
+          <div class="patient-info">
+            <strong>{{ patient.patient.firstname }} {{ patient.patient.lastname }}</strong>
+            <p class="patient-email">Email: {{ patient.patient.email }}</p>
+          </div>
+          <div class="patient-visit">
+            <p class="visit-count">Visits: {{ patient.visitCount }}</p>
+            <div class="star-rating">
+              <span *ngFor="let star of getStars(patient.visitCount)" class="star">★</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <ng-template #noPatients>
+    <p class="no-patients-message">No top patients available.</p>
+  </ng-template>
+  

@@ -1,0 +1,73 @@
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  padding: 10px;
+}
+
+.select-button, .select-button-cancel {
+  color: #00A2E9; /* Default color for select-button */
+  background-color: #fff; /* Default background color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-flex; /* Ensure buttons stay inline */
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  margin: 0 5px; /* Add spacing between buttons */
+}
+
+.select-button {
+  color: #00A2E9;
+}
+
+.select-button:hover {
+  background-color: #00A2E9;
+  color: white;
+}
+
+.select-button:focus {
+  outline: none;
+}
+
+.select-button-cancel {
+  color: #787878;
+}
+
+.select-button-cancel:hover {
+  background-color: #787878;
+  color: white;
+}
+
+.select-button-cancel:focus {
+  outline: none;
+}
+
+.dialog-title {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.invoice {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.header, .order-info, .items, .footer {
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.items, .order-info {
+  text-align: left;
+}
+
+.footer {
+  font-size: 0.9em;
+}

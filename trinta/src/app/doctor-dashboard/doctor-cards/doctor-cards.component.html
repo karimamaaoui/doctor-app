@@ -1,0 +1,59 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+
+<div
+  className="sticky top-0 z-50 bg-[#F2F7FF] bg-opacity-80 p-3 backdrop-blur-md"
+>
+  <div class="homepage">
+    <header class="navbar"  *ngIf="!isUserLoggedIn()">
+      <div class="logo">
+        <img src="../../assets/logo.svg" alt="Doctor Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a  class="active">Home</a></li>
+          <li><a >About</a></li>
+          <li><a >Service</a></li>
+          <li><a >Contact</a></li>
+        </ul>
+      </nav>
+      <a class="login-button" routerLink="/login">Login</a>
+    </header>
+
+    <div class="doctors-container">
+      <!-- Vérifier s'il y a des médecins à afficher -->
+      <div *ngIf="doctors.length > 0; else noDoctorsMessage">
+        <div class="doctor-card col-8" *ngFor="let doctor of doctors">
+          <div class="doctor-image">
+            <img [src]="doctor.profileImage || 'assets/images/courses/course22.jpg'" alt="{{ doctor.firstname }} {{ doctor.lastname }}" />
+          </div>
+          <div class="doctor-info">
+            <h4 class="doctor-name">{{ doctor.client.firstname }} {{ doctor.client.lastname }}</h4>
+            <p class="doctor-specialty">Specialty: {{ doctor.specialities.SpecialtyType | uppercase }}</p>
+            <p class="doctor-phone">Phone: {{ doctor.phoneNumber }}</p>
+            <p class="doctor-email">Email: {{ doctor.client.email }}</p>
+            <p class="doctor-address">Address: {{ doctor.location.city }} , {{ doctor.location.country }}</p>
+            <p class="doctor-hospital">
+              Hospital: {{ doctor.hospital.hospitalName }}<br>
+              Department: {{ doctor.hospital.department }}<br>
+              Hiring Date: {{ doctor.hospital.hiringDate | date:'shortDate' }}
+            </p>
+            <a [href]="doctor.socialLinks.linkedin" class="social-link" >
+              <i class="ri-linkedin-box-fill"></i>
+            </a>
+            <a [href]="doctor.socialLinks.facebook" class="social-link">
+              <i class="ri-facebook-box-fill"></i>
+            </a>
+            <button class="book-appointment-button" (click)="openAppointmentDialog(null,doctor.client._id)">Book an Appointment</button>
+          </div>
+        </div>
+      </div>
+      <ng-template #noDoctorsMessage>
+        <div class="no-doctors-card">
+          <p>No doctors available for this specialty.</p>
+        </div>
+      </ng-template>
+    </div>
+</div>
+  
+</div>
+  

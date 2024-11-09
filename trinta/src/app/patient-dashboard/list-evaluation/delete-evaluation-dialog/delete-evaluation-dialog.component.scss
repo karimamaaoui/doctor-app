@@ -1,0 +1,51 @@
+.dialog-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; // Adjust the size as needed
+    color: #1a73e8; // Blue color for the title
+    margin-bottom: 16px; // Space between the title and content
+  }
+  
+  .dialog-icon {
+    color: #1a73e8; // Blue color for the warning icon
+    margin-right: 8px; // Space between the icon and text
+    font-size: 24px; // Make the icon larger
+  }
+  
+  .dialog-content {
+    font-size: 1rem;
+    margin-bottom: 24px; // Space between the content and actions
+    color: #5f6368; // Gray color for the content text
+  }
+  
+
+  .cancel-button {
+    background-color: white;
+    color: gray;
+  }
+  
+  .delete-button {
+    background-color: red;
+    color: white;
+  }
+  mat-dialog-actions {
+    display: flex;
+    justify-content: center; // Center align the buttons
+  
+    .cancel-button {
+      color: #5f6368; // Gray color for the cancel button
+      background-color: transparent; // Ensure it looks like a flat button
+    }
+  
+    .delete-button {
+      background-color: #d9534f; // Red color for the delete button
+      color: #fff; // White color for the text
+      margin-left: 8px; // Space between buttons
+    }
+  }
+  
+  .mat-dialog-container {
+    padding: 16px; // Adjust padding around the dialog content
+    border-radius: 8px; // Rounded corners for the dialog
+  }
+  

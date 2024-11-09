@@ -1,0 +1,85 @@
+<mat-dialog-content>
+  <div class="invoice">
+    <div class="header">
+      <h5 mat-dialog-title class="dialog-title">Demand Info</h5>
+      <b>Client info</b>
+      
+      <p>
+         
+        Email : {{ data.client.email || "N/A" }}<br />
+        Address : {{ data.address || "N/A" }}<br />
+        Phone Number : {{ data.phoneNumber || "N/A" }}
+      </p>
+    </div>
+    <div class="order-info">
+      <b>#Diploma </b>
+      <p>
+        * {{ data.diploma.diplomaName }} *<br />
+        Year: {{ data.diploma.year }} <br />
+        Experience Years : {{ data.experienceYears }} <br />
+      </p>
+    </div>
+
+    <div class="items">
+      <b> Location </b>
+      <p>
+        Address {{ data.address }} $ <br />
+        City : {{ data.location.city }} <br />
+        Country : {{ data.location.country }} <br />
+        Zip Code : {{ data.location.zipCode }} <br />
+        </p>
+
+        @if(data.hospital!= null)
+{
+    ---------------------------------------------------------------
+    <br />
+    <b> Hospital </b>
+
+    <p>
+    Hospital Name : {{data.hospital.hospitalName}} <br />
+
+    Hospital Number : {{data.hospital.hospitalNumber}} <br/>
+     Department : {{data.hospital.department}}<br/>
+     Hiring Date : {{data.hospital.hiringDate}}<br/>
+  </p>
+
+
+}     
+    @if(data.socialLinks != null){
+
+
+      ---------------------------------------------------------------
+      <br />
+      <b> Social Links </b>
+
+      <p>
+      Linkedin : {{data.socialLinks.linkedin}} <br />
+      Facebook : {{data.socialLinks.facebook}} <br />
+
+    </p>
+}
+
+<b>State</b>
+<div>
+  <mat-radio-group [(ngModel)]="data.state">
+    <mat-radio-button value="IN PROGRESS">In Progress</mat-radio-button>
+    <mat-radio-button value="REFUSED">Refused</mat-radio-button>
+    <mat-radio-button value="ACCEPTED">Accepted</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="action-buttons">
+    <button mat-button class="select-button" (click)="saveChanges()">
+      <mat-icon>save</mat-icon>
+    </button>
+    <button mat-button class="select-button-cancel" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</mat-dialog-actions>

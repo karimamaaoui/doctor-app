@@ -1,0 +1,44 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+<div class="dialog-header">
+    <mat-icon>event_note</mat-icon>
+    <span>Détails du Rendez-vous</span>
+    <button mat-icon-button class="close-button" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content>
+    <div class="appointment-details">
+      <p><strong>Date and Hour :</strong> {{ appointment.dateAppointment | date: 'dd MMMM yyyy, HH:mm' }}</p>
+      <p><strong>Statut :</strong>
+        <mat-chip [color]="getStatusColor(appointment.status)">
+          {{ appointment.status }}
+        </mat-chip>
+      </p>
+      <p><strong>Type :</strong> <mat-icon>{{ appointment.type === 'ONLINE' ? 'videocam' : 'location_on' }}</mat-icon> {{ data.appointment.type }}</p>
+    </div>
+  
+    <div class="doctor-info">
+      <h3>Doctor's Informations </h3>
+      <p><strong>Full name :</strong> Dr. {{ appointment.doctor.firstname }}   {{ appointment.doctor.lastname }}</p>
+      <p><strong>Speciality :</strong>--specialte--</p>
+    </div>
+  
+    <div class="patient-info">
+      <h3>Patient's Informations </h3>
+      <p><strong>Full name :</strong> {{ appointment.patient.firstname }}  {{ appointment.patient.lastname }}</p>
+      <p><strong>Contact :</strong> {{ appointment.patient.email }}</p>
+    </div>
+  
+    <div class="timestamps">
+      <p><strong>Created at :</strong> {{ appointment.createdAt | date: 'dd MMMM yyyy, HH:mm' }}</p>
+      <p><strong>Updated at:</strong> {{ appointment.updatedAt | date: 'dd MMMM yyyy, HH:mm' }}</p>
+    </div>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end" *ngIf="appointment.status === 'PLANIFIED'">
+    <button mat-button color="warn" (click)="updateAppointmentStatus(appointment._id, 'CANCLED')">Cancel</button>
+    <button mat-button color="warn" (click)="openUpdateDialog(appointment)">Rescheduled</button>
+</mat-dialog-actions>
+
+  

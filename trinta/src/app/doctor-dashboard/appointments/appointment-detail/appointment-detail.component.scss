@@ -1,0 +1,153 @@
+/* Couleurs pour les mat-chip */
+mat-chip.primary {
+    background-color: #007bff; /* Bleu pour PLANIFIED */
+    color: #ffffff; /* Texte blanc */
+  }
+  
+  mat-chip.accent {
+    background-color: #28a745; /* Vert pour FINISHED */
+    color: #ffffff; /* Texte blanc */
+  }
+  
+  mat-chip.warn {
+    background-color: #dc3545; /* Rouge pour CANCLED */
+    color: #ffffff; /* Texte blanc */
+  }
+  
+  mat-chip.default {
+    background-color: #6c757d; /* Gris pour UNPLANNED */
+    color: #ffffff; /* Texte blanc */
+  }
+  
+  /* Autres styles pour le dialog */
+  mat-dialog-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  mat-icon {
+    margin-right: 8px;
+  }
+  
+  mat-dialog-content {
+    padding: 16px;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .appointment-details,
+  .doctor-info,
+  .patient-info {
+    margin-bottom: 16px;
+  }
+  
+  h3 {
+    margin-top: 0;
+    color: #007bff;
+  }
+  
+  p {
+    margin: 4px 0;
+  }
+  
+  mat-dialog-actions {
+    padding: 8px 16px;
+  }
+  
+  button {
+    margin-left: 8px;
+  }
+
+  .dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+  
+    mat-icon {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+  
+    span {
+      font-weight: bold;
+      font-size: 18px;
+      flex-grow: 1;
+    }
+  
+    .close-button {
+      margin-left: auto;
+      color: #555;
+  
+      mat-icon {
+        font-size: 20px;
+      }
+    }
+  }
+  
+  mat-dialog-content {
+    padding: 16px;
+  }
+  
+  .appointment-details,
+  .doctor-info,
+  .patient-info,
+  .timestamps {
+    margin-bottom: 16px;
+  
+    p {
+      margin: 4px 0;
+    }
+  
+    strong {
+      display: inline-block;
+      width: 150px;
+    }
+  }
+  
+  mat-chip {
+    margin: 4px 0;
+  }
+  
+  mat-dialog-actions {
+    padding: 16px;
+    text-align: right;
+  }
+  
+  .dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .close-button {
+    color: #f44336; /* Red color for close button */
+  }
+  
+  .appointment-details, .doctor-info, .patient-info, .timestamps {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  mat-dialog-content {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  mat-dialog-actions {
+    padding: 10px;
+  }
+  

@@ -1,0 +1,18 @@
+<div class="doctor-details-dialog">
+    <div class="dialog-header">
+      <button class="close-button" (click)="closeDialog()">×</button>
+    </div>
+    <mat-dialog-content>
+      <div class="profile-container">
+        <img [src]="data.doctor.profileImageUrl" alt="Doctor's profile" class="profile-image">
+        <h2>{{ data.doctor.firstname }} {{ data.doctor.lastname }}</h2>
+      </div>
+      <div class="doctor-info">
+        <p><strong>Email:</strong> {{ data.doctor.email }}</p>
+        <p><strong>Spécialité:</strong> {{ data.doctor.specialty }}</p>
+        <p><strong>Rôle:</strong> {{ data.doctor.role }}</p>
+        <!-- Ajoutez plus d'informations ici -->
+      </div>
+    </mat-dialog-content>
+  </div>
+  

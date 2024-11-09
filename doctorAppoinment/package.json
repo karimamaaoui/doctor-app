@@ -1,0 +1,36 @@
+{
+  "name": "doc-appoinment-doctor",
+  "version": "1.0.0",
+  "description": "This is the backend API for the Doctor Appointment Management System, built with Node.js, Express, and MongoDB. The API handles authentication, doctor availability management, appointment scheduling, and notification services.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^4.4.3",
+    "chartjs-adapter-moment": "^1.0.1",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.5.45",
+    "mongoose": "^8.5.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4",
+    "react-flatpickr": "^3.10.13",
+    "react-transition-group": "^4.4.5",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {}
+}

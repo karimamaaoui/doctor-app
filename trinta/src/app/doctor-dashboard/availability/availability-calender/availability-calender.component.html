@@ -1,0 +1,16 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+<mat-card class="trinta-card all-courses-card mb-25 bg-white border-none d-block">
+  <mat-card-title>
+    <button mat-icon-button class="toggle-button data-icon" (click)="toggleView()">
+      <i class="ri-table-line"></i>
+    </button>
+    <h5 class="mt-0 mb-0">Availability calendar</h5>
+  </mat-card-title>
+  <mat-card-content *ngIf="isCalendarVisible">
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </mat-card-content>
+  <mat-card-content *ngIf="!isCalendarVisible">
+    <!-- Table Component Here -->
+    <app-availability-table/>
+  </mat-card-content>
+</mat-card>

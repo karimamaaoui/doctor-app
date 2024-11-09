@@ -1,0 +1,44 @@
+<mat-dialog-content>
+    <h1>Add Evaluation</h1>
+    <p>Please add the details of the evaluation below:</p>
+  
+    <form [formGroup]="evaluationForm" class="example-form" (ngSubmit)="onSubmit()">
+      <div class="form-container">
+        <!-- Removed Evaluation ID field -->
+  
+        <!-- Evaluation Date set to current date and disabled -->
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Evaluation Date</mat-label>
+          <input matInput type="date" formControlName="EvaluationDate" >
+          <mat-error *ngIf="evaluationForm.get('EvaluationDate')?.hasError('required')">
+            Evaluation Date is required
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- PM field -->
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>PM</mat-label>
+          <input matInput formControlName="Pm" placeholder="PM">
+          <mat-error *ngIf="evaluationForm.get('Pm')?.hasError('required')">
+            PM is required
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Patient field -->
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Patient</mat-label>
+          <input matInput formControlName="Patient" placeholder="Patient">
+          <mat-error *ngIf="evaluationForm.get('Patient')?.hasError('required')">
+            Patient is required
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Dialog actions -->
+        <mat-dialog-actions align="end">
+          <button mat-button type="button" color="warn" (click)="onCancel()">Cancel</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="evaluationForm.invalid">Add</button>
+        </mat-dialog-actions>
+      </div>
+    </form>
+  </mat-dialog-content>
+  

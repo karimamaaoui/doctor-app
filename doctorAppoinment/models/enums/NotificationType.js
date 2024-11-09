@@ -1,0 +1,6 @@
+const notificationType= {
+CONFIRMED:'CONFIRMED', 
+CANCELED:'CANCELED', 
+ADDED:'ADDED',
+UPDATED:'UPDATED'
+}

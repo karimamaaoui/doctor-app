@@ -1,0 +1,104 @@
+.appointment-card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* Position relative for the card */
+    min-height: 200px; /* Ensures the card maintains a minimum height */
+}
+
+.corner-image {
+    position: absolute;
+    width: 120px; /* Adjusted width for better visibility */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.top-corner {
+    top: 10px; /* Position top corner */
+    right: 10px; /* Position top corner */
+}
+
+.bottom-corner {
+    bottom: 10px; /* Position bottom corner */
+    left: 10px; /* Position bottom corner */
+    z-index: 1; /* Ensure it stays above background content */
+}
+
+.appointment-info {
+    margin-bottom: 20px;
+}
+
+.doctor-name,
+.appointment-time,
+.appointment-date {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-height: 60px; /* Ensures space is reserved for buttons */
+}
+
+.btn {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #1E90FF, #ADD8E6); /* Blue gradient */
+    transition: background 0.3s ease;
+   
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #1C86EE, #87CEFA); /* Darker blue gradient on hover */
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.5);
+}
+
+.no-appointment-message {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.no-appointment-message h5 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.no-appointment-message p {
+    color: #777;
+}
+.appointment-container-single {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .appointment-container-multiple {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .appointment-card {
+    margin-bottom: 20px;
+  }
+  
+  .appointment-card.col-5 {
+    margin-right: 10px;
+  }
+  

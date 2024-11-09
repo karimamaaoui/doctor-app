@@ -1,0 +1,193 @@
+<mat-card class="trinta-card add-user-card mb-25 bg-white border-none d-block">
+  <mat-card-header>
+    <mat-card-title>
+      <h5 class="mt-0 mb-0">Send Demand Doctor</h5>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit(demandDoctorForm)" #demandDoctorForm="ngForm">
+      <div class="row">
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Diploma Name</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter diploma name</mat-label>
+            <input
+              matInput
+              name="diplomaName"
+              [(ngModel)]="demandDoctor.diploma.diplomaName"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Diploma Year</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter diploma year</mat-label>
+            <input
+              matInput
+              name="year"
+              [(ngModel)]="demandDoctor.diploma.year"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Specialities</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Select speciality</mat-label>
+            <mat-select
+              name="specialities"
+              [(ngModel)]="demandDoctor.specialities"
+            >
+              @for(speciality of specialities ; track $index ){
+              <mat-option [value]="speciality._id">
+                {{ speciality.SpecialtyType }}
+              </mat-option>
+
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Experience Years</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter experience years</mat-label>
+            <input
+              matInput
+              type="number"
+              name="experienceYears"
+              [(ngModel)]="demandDoctor.experienceYears"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Phone Number</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter phone number</mat-label>
+            <input
+              matInput
+              name="phoneNumber"
+              [(ngModel)]="demandDoctor.phoneNumber"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <label class="label d-block fw-medium mb-10">Address</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter address</mat-label>
+            <input matInput name="address" [(ngModel)]="demandDoctor.address" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4">
+          <label class="label d-block fw-medium mb-10">City</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Select city</mat-label>
+            <mat-select name="city" [(ngModel)]="demandDoctor.location.city">
+              <mat-option value="Tokyo">Tokyo</mat-option>
+              <mat-option value="London">London</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4">
+          <label class="label d-block fw-medium mb-10">Country</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Select country</mat-label>
+            <mat-select
+              name="country"
+              [(ngModel)]="demandDoctor.location.country"
+            >
+              <mat-option value="Japan">Japan</mat-option>
+              <mat-option value="UK">UK</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4">
+          <label class="label d-block fw-medium mb-10">Zip Code</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter zip code</mat-label>
+            <input
+              matInput
+              name="zipCode"
+              [(ngModel)]="demandDoctor.location.zipCode"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Hospital Name</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter hospital name</mat-label>
+            <input
+              matInput
+              name="hospitalName"
+              [(ngModel)]="demandDoctor.hospital.hospitalName"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Hospital Number</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter hospital number</mat-label>
+            <input
+              matInput
+              name="hospitalNumber"
+              [(ngModel)]="demandDoctor.hospital.hospitalNumber"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Department</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter department</mat-label>
+            <input
+              matInput
+              name="department"
+              [(ngModel)]="demandDoctor.hospital.department"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Hiring Date</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter hiring date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              name="hiringDate"
+              [(ngModel)]="demandDoctor.hospital.hiringDate"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">Facebook Link</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter Facebook link</mat-label>
+            <input
+              matInput
+              name="facebook"
+              [(ngModel)]="demandDoctor.socialLinks.facebook"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <label class="label d-block fw-medium mb-10">LinkedIn Link</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter LinkedIn link</mat-label>
+            <input
+              matInput
+              name="linkedin"
+              [(ngModel)]="demandDoctor.socialLinks.linkedin"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="save-user-btn">
+        <button mat-button type="submit">Save Information</button>
+        <button mat-button type="button">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

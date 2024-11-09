@@ -1,0 +1,53 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+<h1 mat-dialog-title>{{ isEditMode ? 'Edit Availability' : 'Add Availability' }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="availabilityForm">
+    <mat-checkbox formControlName="onlineChecked">Online</mat-checkbox>
+
+    <div *ngIf="availabilityForm.get('onlineChecked').value">
+      <mat-form-field>
+        <mat-label>Online Start Time</mat-label>
+        <mat-select formControlName="onlineStartTime" placeholder="Select time">
+          <mat-option *ngFor="let time of times" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Online End Time</mat-label>
+        <mat-select formControlName="onlineEndTime" placeholder="Select time">
+          <mat-option *ngFor="let time of times" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-checkbox formControlName="inPersonChecked">In Person</mat-checkbox>
+
+    <div *ngIf="availabilityForm.get('inPersonChecked').value">
+      <mat-form-field>
+        <mat-label>In-Person Start Time</mat-label>
+        <mat-select formControlName="inPersonStartTime" placeholder="Select time">
+          <mat-option *ngFor="let time of times" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>In-Person End Time</mat-label>
+        <mat-select formControlName="inPersonEndTime" placeholder="Select time">
+          <mat-option *ngFor="let time of times" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</div>

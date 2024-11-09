@@ -1,0 +1,47 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+
+<h1 mat-dialog-title>Créer un rendez-vous</h1>
+<div mat-dialog-content>
+    <mat-vertical-stepper #stepper linear>
+        <mat-step [stepControl]="firstFormGroup"  [completed]="dateSelected">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel> Select Date</ng-template>
+            <mat-form-field>
+              <mat-label>Select a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choisir une date" [min]="minDate" [matDatepickerFilter]="dateFilter" (dateChange)="onDateChange($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" (click)="stepper.next()" [disabled]="!selectedDate"><i class="ri-arrow-right-s-line"></i></button>
+          </div>
+      </form> 
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup"  [completed]="modeSelected">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel> Select Mode</ng-template>
+          <mat-radio-group formControlName="mode" aria-label="Select an option" (change)="onModeChange($event.value)">
+            <mat-radio-button value="ONLINE">Online</mat-radio-button>
+            <mat-radio-button value="IN_PERSON">In Person</mat-radio-button>
+          </mat-radio-group>
+
+        </form>
+        <div *ngIf="selectedMode && availableTimes.length">
+          <h3>Available hours for {{ selectedMode === 'ONLINE' ? 'Online' : 'In Person' }}:</h3>
+          <div *ngFor="let time of availableTimes">
+            <button mat-button 
+                    (click)="selectTime(time)"
+                    [ngClass]="{'selected-button': isSelected(time)}">
+              {{ time }}:00
+            </button>
+          </div>
+          </div>
+      </mat-step>
+  </mat-vertical-stepper>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="confirm()" [disabled]="!isFormValid()">
+    {{ isUpdateMode ? 'Update' : 'Validate' }}
+  </button>
+</div>

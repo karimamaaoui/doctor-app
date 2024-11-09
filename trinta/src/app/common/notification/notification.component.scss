@@ -1,0 +1,89 @@
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .notification-card {
+    background-color: #f8f9fa; // Slightly grey background
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .notification-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sender-photo {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 0.5rem;
+  }
+  
+  .notification-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sender-name {
+    font-weight: 600;
+  }
+  
+  .notification-time {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .notification-message {
+    font-size: 1rem;
+    color: #333;
+  }
+  .trinta-card {
+    .mat-card-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem; // Ensure there's space around the title and link
+  
+      h5 {
+        margin: 0;
+      }
+      .clear-all-link {
+        cursor: pointer; /* This ensures the cursor is a pointer (hand) */
+        color: #007bff;
+        text-decoration: none;
+        padding: 0.5rem;
+        z-index: 1;
+        transition: color 0.3s;
+      
+        &:hover {
+          color: #0056b3;
+        }
+      }
+      
+      }
+    }
+  
+    .mat-card-content {
+      padding-top: 0.5rem;
+    }
+    .link-btn {
+      cursor: pointer;
+      text-decoration: none;
+      color: #007bff; /* Adjust color as needed */
+    }
+    
+    .link-btn:hover {
+      color: #0056b3; /* Darker color on hover */
+    }
+  
+  

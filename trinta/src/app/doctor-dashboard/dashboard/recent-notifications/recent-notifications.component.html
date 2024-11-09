@@ -1,0 +1,19 @@
+<!-- src/app/components/recent-notifications/recent-notifications.component.html -->
+<div *ngIf="notifications.length > 0; else noNotifications" class="notifications-container">
+    <h3>Recent Notifications</h3>
+    <div class="notifications-wrapper">
+      <ul class="notifications-list">
+        <li *ngFor="let notification of notifications" class="notification-item">
+          <div class="notification-info">
+            <p class="notification-message">{{ notification.message }}</p>
+            <p class="notification-time">{{ notification.timestamp | date: 'short' }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <ng-template #noNotifications>
+    <p class="no-notifications-message">No recent notifications.</p>
+  </ng-template>
+  

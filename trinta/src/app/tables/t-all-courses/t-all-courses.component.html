@@ -1,0 +1,30 @@
+<mat-card
+    class="trinta-card all-courses-card mb-25 bg-white border-none d-block"
+>
+    <mat-card-header>
+        <mat-card-title>
+            <h5 class="mt-0 mb-0">
+                All Appointments 
+            </h5>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab label="All">
+                <app-t-all />
+            </mat-tab>
+            <mat-tab label="Unplanned">
+                <app-t-in-progress />
+            </mat-tab>
+            <mat-tab label="Planified">
+                <app-t-passed />
+            </mat-tab>
+            <mat-tab label="Finished">
+                <app-t-finished />
+            </mat-tab>
+            <mat-tab label="Cancled">
+                <app-t-failed />
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card-content>
+</mat-card>

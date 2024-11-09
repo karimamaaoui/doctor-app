@@ -1,0 +1,62 @@
+::ng-deep .mat-dialog-container {
+    padding: 0;
+    border-radius: 8px;
+    max-width: 400px;
+  }
+  
+  .dialog-header {
+    padding: 16px;
+    background-color: #3f51b5;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dialog-header i {
+    margin-right: 8px;
+    color: yellow;
+  }
+  
+  .dialog-content {
+    padding: 24px;
+    font-size: 16px;
+  }
+  
+  .dialog-actions {
+    padding: 8px 24px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .dialog-actions button {
+    height: auto;
+    margin-left: 20px;
+    min-width: auto;
+    border-radius: 6px;
+    padding: 18px 25px;
+    letter-spacing: 0.16px;
+    color: white;
+    background-color: var(--primaryColor);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--headingFontFamily);
+    border: none;
+    cursor: pointer; /* Ajoutez le curseur en forme de main */
+    transition: background-color 0.3s; 
+  }
+  
+  .dialog-actions .ok-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .dialog-actions .cancel-button {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  
+  

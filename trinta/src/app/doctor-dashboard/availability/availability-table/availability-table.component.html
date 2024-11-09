@@ -1,0 +1,48 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+<mat-card class="trinta-card all-courses-card mb-25 bg-white border-none d-block">
+    <mat-card-title class="card-title">
+      <h5 class="mt-0 mb-0">Availabilities</h5>
+    </mat-card-title>
+    <mat-card-content>
+      <div class="example-table">
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataSource">
+  
+            <!-- Date Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef> Date </th>
+              <td mat-cell *matCellDef="let element"> {{ element.date | date: 'shortDate' }} </td>
+            </ng-container>
+  
+            <!-- Details Column -->
+            <ng-container matColumnDef="details">
+              <th mat-header-cell *matHeaderCellDef> Details </th>
+              <td mat-cell *matCellDef="let element">
+                <div *ngFor="let slot of element.timeSlots">
+                  {{ slot.startTime }} - {{ slot.endTime }} ({{ slot.mode }})
+                </div>
+              </td>
+            </ng-container>
+  
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button (click)="openEditDialog(element)" >
+                    <i class="ri-edit-line"></i>
+                </button>
+                <button mat-icon-button  (click)="deleteAvailability(element._id)">
+                    <i class="ri-delete-bin-line"></i>
+                </button>
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        <mat-paginator class="mt-15" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements"></mat-paginator>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

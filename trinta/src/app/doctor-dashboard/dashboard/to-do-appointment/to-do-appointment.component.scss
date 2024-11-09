@@ -1,0 +1,82 @@
+.doctor-todo-container {
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .appointment-card {
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+      h5 {
+        font-size: 1.25rem;
+        margin-bottom: 5px;
+      }
+  
+      .appointment-time,
+      .appointment-mode {
+        font-size: 1rem;
+        margin: 5px 0;
+      }
+  
+      .button-container {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+  
+        .time-remaining {
+          font-size: 0.875rem;
+          color: #555;
+        }
+  
+        .btn {
+          &.join-button {
+            background: linear-gradient(90deg, #1E90FF, #ADD8E6);;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+  
+            &:disabled {
+              background-color: #cccccc;
+              cursor: not-allowed;
+            }
+          }
+  
+         
+        }
+      }
+    }
+  
+    .no-appointment-message {
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+      h5 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+
+  
+  .scrollbar-container {
+    overflow-y: auto;
+    max-height: 400px; /* Ajustez cette hauteur selon vos besoins */
+    border-right: 1px solid #ddd; /* Ligne de séparation à droite */
+    padding-right: 1rem;
+  }
+  
+  .appointment-list {
+    padding: 1rem;
+  }
+  
+  
+  
+  
+  
